@@ -8,10 +8,6 @@ html, body {
   height: 100%;
 }
 
-.wrapper {
-  margin: 20px auto;
-}
-
 [class*='col-'] {
     flex: 0 1 auto;
     min-height: 30px;
@@ -21,10 +17,6 @@ html, body {
 }
 
 @media all and (min-width: 500px) {
-
-  .wrapper {
-    padding: 0 20px;
-  }
 
   .row {
     display: flex;

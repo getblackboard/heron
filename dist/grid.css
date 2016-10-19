@@ -6,9 +6,6 @@
 html, body {
   height: 100%; }
 
-.wrapper {
-  margin: 20px auto; }
-
 [class*='col-'] {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 auto;
@@ -19,8 +16,6 @@ html, body {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); }
 
 @media all and (min-width: 500px) {
-  .wrapper {
-    padding: 0 20px; }
   .row {
     display: -webkit-box;
     display: -ms-flexbox;
