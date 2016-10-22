@@ -1,0 +1,42 @@
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+[class*='col-'] {
+    flex: 0 1 auto;
+    min-height: 30px;
+    padding: 1em;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.1);
+}
+
+@media all and (min-width: 500px) {
+
+  .row {
+    display: flex;
+  }
+
+  [class*="col-"] {
+    margin-right: 20px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+  }
+
+  @for $i from 1 through 12 {
+
+    .col-#{$i}{
+      flex: $i;
+    }
+
+  }
+
+}

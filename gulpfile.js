@@ -22,7 +22,7 @@ gulp.task('browser-sync', ['sass'], function() {
 
 gulp.task('sass', function() {
 
-  return gulp.src('grid.scss')
+  return gulp.src('heron.scss')
     .pipe(sass({
       includePaths: [],
       onError: browserSync.notify
@@ -35,7 +35,7 @@ gulp.task('sass', function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch('./grid.scss', ['sass']);
+  gulp.watch('./heron.scss', ['sass']);
   gulp.watch('index.html', browserSync.reload)
 });
 

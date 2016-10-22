@@ -1,9 +1,9 @@
-#Flexi Flexbox Grid
-Flexi is an extremely simple CSS grid. Drop it in an go. The intention is to be as light weight as possible. Let me know if you see improvements that could make it lighter!
+#Heron Flexbox Grid
+Heron is an extremely simple CSS grid. Drop it in an go. The intention is to be as light weight as possible. Let me know if you see improvements that could make it lighter!
 
-[Flexi](http://flexi.surge.sh)
+[Heron](http://heron.surge.sh)
 
-![](flexi.png)
+![](heron.png)
 
 ```
 <div class="row">
