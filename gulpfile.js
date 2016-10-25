@@ -1,7 +1,7 @@
 var gulp           = require('gulp'),
     browserSync    = require('browser-sync'),
     sass           = require('gulp-sass'),
-    cleanCSS       = require('gulp-clean-css'),
+    rename         = require('gulp-rename'),
     prefix         = require('gulp-autoprefixer');
 
 gulp.task('browser-sync', ['sass'], function() {
@@ -25,17 +25,29 @@ gulp.task('sass', function() {
   return gulp.src('heron.scss')
     .pipe(sass({
       includePaths: [],
-      onError: browserSync.notify
+      onError: browserSync.notify,
+      outputStyle: 'compressed'
     }))
     .pipe(prefix(['last 3 versions', '> 1%', 'ie 8'], { cascade: true }))
-    .pipe(gulp.dest('dist/'))
     .pipe(browserSync.reload({stream: true}))
+    .pipe(rename('heron.min.css'))
+    .pipe(gulp.dest('dist'));
+
+});
+
+gulp.task('non-min', function() {
+
+  return gulp.src('heron.scss')
+    .pipe(sass({
+      includePaths: [],
+    }))
+    .pipe(prefix(['last 3 versions', '> 1%', 'ie 8'], { cascade: true }))
     .pipe(gulp.dest('dist'));
 
 });
 
 gulp.task('watch', function() {
-  gulp.watch('./heron.scss', ['sass']);
+  gulp.watch('./heron.scss', ['sass', 'non-min']);
   gulp.watch('index.html', browserSync.reload)
 });
 
